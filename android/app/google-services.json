@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "670852324081",
+    "project_id": "promociones-de-venta",
+    "storage_bucket": "promociones-de-venta.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670852324081:android:6ca64b0439d82283036750",
+        "android_client_info": {
+          "package_name": "com.example.promociones_de_venta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAUVGWF5SLeE3u8p-U6pOtorobVYfxEdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
