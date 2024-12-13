@@ -8,7 +8,7 @@ class PromotionInputScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
   final _discountController = TextEditingController();
-  final _conditionsController = TextEditingController(); // Nuevo controlador
+  final _conditionsController = TextEditingController();
   final _isActive = ValueNotifier<bool>(true);
 
   @override
@@ -22,7 +22,6 @@ class PromotionInputScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // Campo de título
                 TextFormField(
                   controller: _titleController,
                   decoration: InputDecoration(labelText: 'Título'),
@@ -30,7 +29,7 @@ class PromotionInputScreen extends StatelessWidget {
                       value!.isEmpty ? 'Ingrese un título' : null,
                 ),
                 SizedBox(height: 15),
-                // Campo de descuento
+
                 TextFormField(
                   controller: _discountController,
                   decoration: InputDecoration(labelText: 'Descuento (%)'),
@@ -39,7 +38,7 @@ class PromotionInputScreen extends StatelessWidget {
                       value!.isEmpty ? 'Ingrese un descuento' : null,
                 ),
                 SizedBox(height: 15),
-                // Campo de condiciones (nuevo)
+
                 TextFormField(
                   controller: _conditionsController,
                   decoration: InputDecoration(labelText: 'Condiciones'),
@@ -60,7 +59,7 @@ class PromotionInputScreen extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 20),
-                // Botón de guardar
+
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
@@ -69,12 +68,12 @@ class PromotionInputScreen extends StatelessWidget {
                         title: _titleController.text,
                         discount: int.parse(_discountController.text),
                         isActive: _isActive.value,
-                        conditions: _conditionsController.text, // Nuevo campo
+                        conditions: _conditionsController.text,
                       );
                       context
                           .read<PromotionBloc>()
                           .add(AddPromotion(promotion));
-                      Navigator.pop(context); // Volver a la lista
+                      Navigator.pop(context);
                     }
                   },
                   child: Text('Guardar'),
